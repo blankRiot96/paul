@@ -5,11 +5,13 @@ import typing as t
 import pygame
 
 if t.TYPE_CHECKING:
+    from src import utils
     from src.enums import State
 
 # Canvas
 screen: pygame.Surface
 srect: pygame.Rect
+camera: utils.Camera
 
 # Events
 events: list[pygame.event.Event]
