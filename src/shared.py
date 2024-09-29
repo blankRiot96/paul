@@ -9,6 +9,10 @@ if t.TYPE_CHECKING:
     from src.enums import State
     from src.player import Player
 
+# Utils
+# entities: list[Entity]
+
+
 # Canvas
 screen: pygame.Surface
 srect: pygame.Rect
