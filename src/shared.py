@@ -7,6 +7,7 @@ import pygame
 if t.TYPE_CHECKING:
     from src import utils
     from src.enums import State
+    from src.player import Player
 
 # Canvas
 screen: pygame.Surface
@@ -25,3 +26,6 @@ clock: pygame.Clock
 
 # States
 next_state: State | None
+
+# Entities
+player: Player

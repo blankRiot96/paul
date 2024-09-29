@@ -1,3 +1,4 @@
+import typing as t
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -9,6 +10,7 @@ import pytmx
 class TileInfo:
     pos: pygame.Vector2
     image: pygame.Surface
+    id: int
 
 
 class MapReader:
@@ -19,8 +21,14 @@ class MapReader:
     def process_map(self):
         self.tiles: list[TileInfo] = []
         self.tile_size = self.map.tilewidth
-        for layer in self.map.layers:
+        for layer_index, layer in enumerate(self.map.layers):
             for x, y, image in layer.tiles():
+                properties = self.map.get_tile_properties(x, y, layer_index)
                 self.tiles.append(
-                    TileInfo(pygame.Vector2(x, y) * self.tile_size, image)
+                    TileInfo(
+                        pygame.Vector2(x, y) * self.tile_size,
+                        image,
+                        # id=properties["type"],
+                        id=1,
+                    )
                 )
