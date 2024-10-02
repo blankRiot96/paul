@@ -8,10 +8,10 @@ if t.TYPE_CHECKING:
     from src import utils
     from src.enums import State
     from src.player import Player
+    from src.utils.components import Components
 
 # Utils
-# entities: list[Entity]
-
+entities: dict[str, list[Components]]
 
 # Canvas
 screen: pygame.Surface

@@ -20,4 +20,7 @@ cp -r src/utils ~/p/pgbase/src/utils
 """
 
 from .camera import Camera
+from .components import Components
+from .systems import System
 from .tmx import MapReader
+from .world import World
